@@ -25,8 +25,8 @@ final class GDO_Installation extends GDO
 		return [
 			GDT_AutoInc::make('hi_id'),
 			GDT_Name::make('hi_name'),
-			GDT_Url::make('hi_url'),
-			GDT_Duration::make('hi_interval'),
+			GDT_Url::make('hi_url')->notNull()->reachable(true),
+			GDT_Duration::make('hi_interval')->notNull()->initial('30m'),
 			GDT_Timestamp::make('hi_last_check'),
 			GDT_HydraStatus::make('hi_status'),
 			GDT_Timestamp::make('hi_alert_since'),
