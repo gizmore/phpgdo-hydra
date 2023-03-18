@@ -24,7 +24,7 @@ final class Module_Hydra extends GDO_Module
 	###############
 	### Install ###
 	###############
-	public function onInstall(): void
+	public function onAfterInstall(): void
 	{
 		Install::onInstall();
 	}

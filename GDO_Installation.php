@@ -36,5 +36,10 @@ final class GDO_Installation extends GDO
 			GDT_DeletedBy::make('hi_deletor'),
 		];
 	}
+
+	public static function getByName(string $name): ?self
+	{
+		return self::getBy('hi_name', $name);
+	}
 	
 }
