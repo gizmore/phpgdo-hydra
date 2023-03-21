@@ -3,23 +3,28 @@ namespace GDO\Hydra;
 
 use GDO\Core\GDO;
 use GDO\Core\GDT_AutoInc;
-use GDO\Core\GDT_Name;
-use GDO\Net\GDT_Url;
-use GDO\Date\GDT_Timestamp;
 use GDO\Core\GDT_CreatedAt;
 use GDO\Core\GDT_CreatedBy;
 use GDO\Core\GDT_DeletedAt;
 use GDO\Core\GDT_DeletedBy;
+use GDO\Core\GDT_Name;
 use GDO\Date\GDT_Duration;
+use GDO\Date\GDT_Timestamp;
+use GDO\Net\GDT_Url;
 
 /**
  * Database entry for a service installation.
- * 
+ *
  * @author gizmore
  */
 final class GDO_Installation extends GDO
 {
-	
+
+	public static function getByName(string $name): ?self
+	{
+		return self::getBy('hi_name', $name);
+	}
+
 	public function gdoColumns(): array
 	{
 		return [
@@ -37,9 +42,4 @@ final class GDO_Installation extends GDO
 		];
 	}
 
-	public static function getByName(string $name): ?self
-	{
-		return self::getBy('hi_name', $name);
-	}
-	
 }

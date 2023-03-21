@@ -5,18 +5,18 @@ use GDO\Core\GDT_Enum;
 
 /**
  * Service status indicator enum.
- * 
+ *
  * @author gizmore
  */
 final class GDT_HydraStatus extends GDT_Enum
 {
-	
-	const FRESH = 'fresh';
-	const FINE = 'fine';
-	const SLOW = 'slow';
-	const MAINTENANCE = 'maintenance';
-	const DOWN = 'down';
-	
+
+	public const FRESH = 'fresh';
+	public const FINE = 'fine';
+	public const SLOW = 'slow';
+	public const MAINTENANCE = 'maintenance';
+	public const DOWN = 'down';
+
 	protected function __construct()
 	{
 		parent::__construct();
@@ -25,5 +25,5 @@ final class GDT_HydraStatus extends GDT_Enum
 		$this->notNull();
 		$this->icon('info');
 	}
-	
+
 }

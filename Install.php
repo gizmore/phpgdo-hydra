@@ -3,21 +3,13 @@ namespace GDO\Hydra;
 
 /**
  * Install gizmore's sites as default.
- * 
- * @author gizmore
+ *
  * @version 7.0.2
+ * @author gizmore
  */
-final class Install 
+final class Install
 {
-	
-	public static function onInstall(): void
-	{
-		foreach (self::$URLS as $name => $url)
-		{
-			self::installSite($name, $url);
-		}
-	}
-	
+
 	private static array $URLS = [
 		'phpgdo' => 'https://phpgdo.com',
 		'Hydra' => 'https://hydra.phpgdo.com',
@@ -28,7 +20,15 @@ final class Install
 		'Dog' => 'https://dog.phpgdo.com',
 		'Diary' => 'https://diary.gizmore.org',
 	];
-	
+
+	public static function onInstall(): void
+	{
+		foreach (self::$URLS as $name => $url)
+		{
+			self::installSite($name, $url);
+		}
+	}
+
 	private static function installSite(string $name, string $url)
 	{
 		if (!($site = GDO_Installation::getByName($name)))
@@ -41,5 +41,5 @@ final class Install
 		]);
 		$site->save();
 	}
-	
+
 }

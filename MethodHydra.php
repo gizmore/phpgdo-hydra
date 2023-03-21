@@ -3,5 +3,5 @@ namespace GDO\Hydra;
 
 trait MethodHydra
 {
-	
+
 }
