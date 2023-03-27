@@ -11,6 +11,6 @@ use GDO\Cronjob\MethodCronjob;
 final class CronjobTest extends MethodCronjob
 {
 
-	public function run() {}
+	public function run(): void {}
 
 }
