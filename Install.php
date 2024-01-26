@@ -11,6 +11,7 @@ final class Install
 {
 
 	private static array $URLS = [
+        'ITMB'=>'https://itmb.online',
 		'phpgdo' => 'https://phpgdo.com',
 		'Hydra' => 'https://hydra.phpgdo.com',
 		'Geo2C' => 'https://geo2country.phpgdo.com',
@@ -29,8 +30,8 @@ final class Install
 		}
 	}
 
-	private static function installSite(string $name, string $url)
-	{
+	private static function installSite(string $name, string $url): void
+    {
 		if (!($site = GDO_Installation::getByName($name)))
 		{
 			$site = GDO_Installation::blank();
